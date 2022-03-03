@@ -1,0 +1,9 @@
+{
+    "java.format.settings.url": "./.vscode/eclipse-formatter.xml",
+    "editor.formatOnSave": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "PA 1/libs/hamcrest-core-1.3.jar",
+        "PA 1/libs/junit-4.12.jar"
+    ]
+}
