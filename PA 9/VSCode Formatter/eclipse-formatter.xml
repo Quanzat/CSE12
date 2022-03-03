@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<profiles version="13">
+  <profile kind="CodeFormatterProfile" name="CSE12Style" version="13">
+    <!-- CSE 12 wants "Lines shorter than 80 characters" -->
+    <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="80" />
+  </profile>
+</profiles>
