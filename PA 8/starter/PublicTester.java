@@ -35,7 +35,7 @@ public class PublicTester {
             new MyBST.MyBSTNode(3, 30, two);
         MyBST.MyBSTNode<Integer, Integer> five = 
             new MyBST.MyBSTNode(5, 50, six);
-
+            
         this.completeTree = new MyBST();
         this.completeTree.root = root;
         root.setLeft(two);
