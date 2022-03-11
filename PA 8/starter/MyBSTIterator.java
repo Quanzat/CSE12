@@ -1,6 +1,19 @@
+
+/**
+ * Name: Quan Tran 
+ * ID: A16191839               
+ * Email: qutran@ucsd.edu              
+ * Sources used: Lecture      
+ * 
+ * TODO:
+ */
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * TODO:
+ */
 public class MyBSTIterator<K extends Comparable<K>, V> extends MyBST<K, V> {
     abstract class MyBSTNodeIterator<T> implements Iterator<T> {
         MyBSTNode<K, V> next;
@@ -27,26 +40,35 @@ public class MyBSTIterator<K extends Comparable<K>, V> extends MyBST<K, V> {
         }
 
         MyBSTNode<K, V> nextNode() {
-            // TODO
-            return null;
+            if (hasNext() == false) {
+                throw new NoSuchElementException();
+            }
+
+            else {
+                lastVisited = next;
+                next = next.successor();
+            }
+            return lastVisited;
         }
 
         /**
-         * TODO: add inline comments for this method to demonstrate your
-         *   understanding of this method.
          *
          * This method removes the last visited node from the tree.
          */
         public void remove() {
+            // Checking if the last visited node is null
             if (lastVisited == null) {
-                throw new IllegalStateException();
+                throw new IllegalStateException(); // Throw exception if null
             }
+
+            // Checking if the last visited node has both its children
             if (lastVisited.getRight() != null &&
                     lastVisited.getLeft() != null) {
-                next = lastVisited;
+                next = lastVisited; // set next to the last visited node
             }
+            // remove the last visited node
             MyBSTIterator.this.remove(lastVisited.getKey());
-            lastVisited = null;
+            lastVisited = null; // Set the last visited node to null
         }
     }
 
